@@ -92,29 +92,31 @@
 
         .hero-image {
             position: relative;
-            width: 259px;
-            height: 256px;
+            width: clamp(180px, 25vw, 260px);
+            aspect-ratio: 1 / 1;
+            margin: 0 auto 20px;
         }
 
+        /* BLUR GLOW BEHIND THE CIRCLE */
         .hero-image::before {
             content: '';
             position: absolute;
             inset: 0;
             background: linear-gradient(to right, #a855f7, #ec4899);
             border-radius: 50%;
-            filter: blur(12px);
-            opacity: 0.75;
+            filter: blur(18px);
+            opacity: 0.8;
             z-index: -1;
         }
 
+        /* INNER CIRCLE */
         .hero-image-inner {
             background-color: #1f2937;
-            
             border-radius: 50%;
             width: 100%;
             height: 100%;
-            position: relative;
             overflow: hidden;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
         }
 
         .hero-image-inner img {
@@ -123,7 +125,6 @@
             object-fit: cover;
             object-position: center;
         }
-
         .hero-text {
             flex: 1;
             display: flex;
@@ -601,3 +602,4 @@
         .inline-block {
             display: inline-block;
         }
+
