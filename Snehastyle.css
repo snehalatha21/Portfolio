@@ -90,6 +90,11 @@
             }
         }
 
+        .hero-container {
+            text-align: center;
+        }
+
+        /* MAIN IMAGE WRAPPER */
         .hero-image {
             position: relative;
             width: clamp(180px, 25vw, 260px);
@@ -125,6 +130,7 @@
             object-fit: cover;
             object-position: center;
         }
+
         .hero-text {
             flex: 1;
             display: flex;
