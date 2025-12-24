@@ -90,44 +90,53 @@
             }
         }
 
-        .hero-container {
-            text-align: center;
+        .hero-image {
+            position: relative;
+            width: 259px;
+            height: 256px;
         }
 
-        /* MAIN IMAGE WRAPPER */
-        .hero-image {
-    position: relative;
-    width: 260px;   /* increase size */
-    height: 260px;  /* increase size */
-}
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, #a855f7, #ec4899);
+            border-radius: 50%;
+            filter: blur(12px);
+            opacity: 0.75;
+            z-index: -1;
+        }
 
-.hero-image::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, #a855f7, #ec4899);
-    border-radius: 50%;
-    filter: blur(12px);
-    opacity: 0.75;
-    z-index: -1;
-}
+        .hero-image-inner {
+            background-color: #1f2937;
+            
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
 
-.hero-image-inner {
-    background-color: #1f2937;
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-}
+        .hero-image-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
 
-.hero-image-inner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;   /* lifts image to show your head */
-    display: block;         /* FIX: ensures image will not collapse */
-}
+        .hero-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .hero-title {
+            font-size: 2.25rem;
+            font-weight: 720;
+            line-height: 1.2;
+            color: white;
+        }
 
         @media (min-width: 768px) {
             .hero-title {
@@ -592,6 +601,3 @@
         .inline-block {
             display: inline-block;
         }
-
-
-
